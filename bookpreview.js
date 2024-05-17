@@ -19,3 +19,15 @@ class BookPreview extends HTMLElement {
 }
 
 customElements.define('book-preview', BookPreview);
+
+// Function to create book previews
+const createBookPreview = (book) => {
+    const { author, id, image, title } = book;
+    const preview = document.createElement('book-preview');
+    preview.dataset.id = id;
+    preview.dataset.author = author;
+    preview.dataset.image = image;
+    preview.dataset.title = title;
+    return preview;
+};
+
